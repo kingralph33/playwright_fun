@@ -1,10 +1,23 @@
 {
-  "name": "playwright_fun",
-  "version": "1.0.0",
-  "main": "index.js",
-  "license": "MIT",
-  "devDependencies": {
-    "@playwright/test": "^1.26.1"
-  },
-  "scripts": {}
+	"name": "playwright_fun",
+	"private": true,
+	"repository": "github:kingralph33/playwright_fun.git",
+	"engines": {
+		"node": ">=16.17.1"
+	},
+	"version": "1.0.0",
+	"author": {
+		"name": "Ralph King Jr"
+	},
+	"license": "MIT",
+	"devDependencies": {
+		"@playwright/test": "^1.26.1",
+		"typescript": "^4.8.4"
+	},
+	"scripts": {
+		"test": "playwright test",
+		"ctest": "playwright test --project=chromium",
+		"tsc": "tsc",
+		"recorder": "playwright codegen kingralph.dev"
+	}
 }

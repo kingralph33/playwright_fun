@@ -30,13 +30,13 @@ const config: PlaywrightTestConfig = {
 	/* Opt out of parallel tests on CI. */
 	workers: process.env.CI ? 1 : undefined,
 	/* Reporter to use. See https://playwright.dev/docs/test-reporters */
-	reporter: 'html',
+	reporter: 'line',
 	/* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
 	use: {
 		/* Maximum time each action such as `click()` can take. Defaults to 0 (no limit). */
 		actionTimeout: 0,
 		/* Base URL to use in actions like `await page.goto('/')`. */
-		// baseURL: 'http://localhost:3000',
+		baseURL: 'https://kingralph.dev',
 
 		/* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
 		trace: 'on-first-retry',
@@ -52,18 +52,18 @@ const config: PlaywrightTestConfig = {
 		},
 
 		// {
-		//   name: 'firefox',
-		//   use: {
-		//     ...devices['Desktop Firefox'],
-		//   },
+		// 	name: 'firefox',
+		// 	use: {
+		// 		...devices['Desktop Firefox'],
+		// 	},
 		// },
 
-		// {
-		//   name: 'webkit',
-		//   use: {
-		//     ...devices['Desktop Safari'],
-		//   },
-		// },
+		{
+			name: 'webkit',
+			use: {
+				...devices['Desktop Safari'],
+			},
+		},
 
 		/* Test against mobile viewports. */
 		// {
@@ -80,18 +80,18 @@ const config: PlaywrightTestConfig = {
 		// },
 
 		/* Test against branded browsers. */
-		{
-			name: 'Microsoft Edge',
-			use: {
-				channel: 'msedge',
-			},
-		},
-		{
-			name: 'Google Chrome',
-			use: {
-				channel: 'chrome',
-			},
-		},
+		// {
+		// 	name: 'Microsoft Edge',
+		// 	use: {
+		// 		channel: 'msedge',
+		// 	},
+		// },
+		// {
+		// 	name: 'Google Chrome',
+		// 	use: {
+		// 		channel: 'chrome',
+		// 	},
+		// },
 	],
 
 	/* Folder for test artifacts such as screenshots, videos, traces, etc. */
